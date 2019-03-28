@@ -121,3 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOCAL_SETTINGS_FILE = os.path.join(BASE_DIR, "local_settings.py")
+if os.path.exists(LOCAL_SETTINGS_FILE):
+    from .local_settings import *  # noqa
